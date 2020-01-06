@@ -23,6 +23,7 @@ export default class Layout extends Component {
                     isOpen={this.state.menu}
                 />
                 <Drawer
+                    onToggle={this.toggleMenuHandler}
                     isOpen={this.state.menu}/>
 
                 <main>

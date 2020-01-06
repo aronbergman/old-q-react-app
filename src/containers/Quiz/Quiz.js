@@ -43,8 +43,6 @@ export default class Quiz extends Component {
             }
         }
 
-        console.log('Answer Id', answerId);
-
         const question = this.state.quiz[this.state.activeQuestion];
         const results = this.state.results;
 
@@ -95,7 +93,6 @@ export default class Quiz extends Component {
     };
 
     render() {
-        console.log(this.state.results);
         return (
             <div className={classes.Quiz}>
                 <div className={classes.QuizWrapper}>

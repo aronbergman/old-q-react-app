@@ -19,9 +19,7 @@ export const FinishQuiz = props => {
                         props.results[quizItem.id] === 'error' ? 'fa-times' : 'fa-check',
                         classes[props.results[quizItem.id]]
                     ];
-
-                    console.log(' classes[props.results[quizItem.id]]', props.results[quizItem.id])
-
+                    
                     return (
                         <li key={index}>
                             <strong>{index + 1} </strong>

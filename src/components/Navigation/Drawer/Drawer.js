@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import classes from './Drawer.module.scss'
+import {Shadow} from '../Shadow/Shadow';
 
 const links = [
     1, 2, 3
@@ -24,13 +25,22 @@ export class Drawer extends Component {
         }
 
         return (
-            <nav className={cls.join(' ')}>
-                <ul>
-                    <a href="#">
-                        {this.renderLinks()}
-                    </a>
-                </ul>
-            </nav>
+            <React.Fragment>
+                <nav className={cls.join(' ')}>
+                    <ul>
+                        <a href="#">
+                            {this.renderLinks()}
+                        </a>
+                    </ul>
+                </nav>
+
+                {
+                    (this.props.isOpen)
+                        ? <Shadow closeMenuToggle={this.props.onToggle}/>
+                        : null
+                }
+            </React.Fragment>
+
         )
     }
 }
