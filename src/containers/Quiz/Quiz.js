@@ -4,8 +4,10 @@ import {ActiveQuiz} from '../../components/ActiveQuiz/ActiveQuiz'
 
 export default class Quiz extends Component {
     state = {
+        activeQuestion: 0,
         quiz: [
             {
+                id: 1,
                 question: 'Какого цвета небо?',
                 rightAnswerId: 2,
                 answers: [
@@ -15,11 +17,25 @@ export default class Quiz extends Component {
                     {text: 'Зеленое', id: 4},
                 ]
             },
+            {
+                id: 2,
+                question: 'В каком году основан Санкт-Петербург?',
+                rightAnswerId: 3,
+                answers: [
+                    {text: '1700', id: 1},
+                    {text: '1705', id: 2},
+                    {text: '1703', id: 3},
+                    {text: '1830', id: 4},
+                ]
+            },
         ]
     };
 
     onAnswerClickHandler = answerId => {
-        console.log('Answer Id', answerId)
+        console.log('Answer Id', answerId);
+        this.setState({
+            activeQuestion: ++this.state.activeQuestion
+        })
     };
 
     render() {
@@ -29,8 +45,11 @@ export default class Quiz extends Component {
                     <h1>Ответьте на все вопросы</h1>
                     <ActiveQuiz
                         onAnswerClick={this.onAnswerClickHandler}
-                        question={this.state.quiz[0].question}
-                        answers={this.state.quiz[0].answers}/>
+                        question={this.state.quiz[this.state.activeQuestion].question}
+                        answers={this.state.quiz[this.state.activeQuestion].answers}
+                        quizLength={this.state.quiz.length}
+                        answerNumber={this.state.activeQuestion + 1}
+                    />
                 </div>
             </div>
         )

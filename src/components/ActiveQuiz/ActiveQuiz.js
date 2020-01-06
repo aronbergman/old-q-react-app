@@ -9,7 +9,7 @@ export const ActiveQuiz = props => (
             <strong>1. </strong>
                 {props.question}
             </span>
-            <small>4 из 14</small>
+            <small>{props.answerNumber} из {props.quizLength}</small>
         </p>
 
         <AnswersList
@@ -17,4 +17,4 @@ export const ActiveQuiz = props => (
             onAnswerClick={props.onAnswerClick}
         />
     </div>
-)
+);
