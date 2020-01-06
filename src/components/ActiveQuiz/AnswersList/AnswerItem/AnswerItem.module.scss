@@ -4,10 +4,19 @@
   padding: 5px 10px;
   margin-bottom: 5px;
   cursor: pointer;
-  transition: all .5s ease;
+  transition: all .3s ease;
 
   &:hover {
-    background: rgba(#fff, .2);
+    background: rgba(#fff, .15);
+  }
+
+  &.success {
+    border: 1px solid greenyellow;
+    color: greenyellow;
+  }
+
+  &.error {
+    border: 1px solid coral;
+    color: coral;
   }
 }
-
