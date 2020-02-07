@@ -42,7 +42,7 @@ export default class Quiz extends Component {
                 return;
             }
         }
-        
+
         const question = this.state.quiz[this.state.activeQuestion];
         const results = this.state.results;
 
@@ -91,6 +91,10 @@ export default class Quiz extends Component {
             results: []
         })
     };
+
+    componentDidMount() {
+        console.log('Quiz ID = ', this.props.match.params.id);
+    }
 
     render() {
         return (
