@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import classes from './Quiz.module.scss'
 import {ActiveQuiz} from '../../components/ActiveQuiz/ActiveQuiz'
-import {FinishQuiz} from "../../components/FinishQuiz/FinishQuiz";
+import {FinishQuiz} from '../../components/FinishQuiz/FinishQuiz';
 
 export default class Quiz extends Component {
     state = {
@@ -42,7 +42,7 @@ export default class Quiz extends Component {
                 return;
             }
         }
-
+        
         const question = this.state.quiz[this.state.activeQuestion];
         const results = this.state.results;
 
