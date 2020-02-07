@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './FinishQuiz.module.scss'
 import {Button} from './../UI/Button/Button'
+import {Link} from 'react-router-dom';
 
 export const FinishQuiz = props => {
     const successCount = Object.keys(props.results).reduce((total, key) => {
@@ -19,7 +20,7 @@ export const FinishQuiz = props => {
                         props.results[quizItem.id] === 'error' ? 'fa-times' : 'fa-check',
                         classes[props.results[quizItem.id]]
                     ];
-                    
+
                     return (
                         <li key={index}>
                             <strong>{index + 1} </strong>
@@ -39,11 +40,13 @@ export const FinishQuiz = props => {
                 >
                     Повторим?
                 </Button>
-                <Button
-                    type={'success'}
-                >
-                    Перейти к списку тестов
-                </Button>
+                <Link to={'/'}>
+                    <Button
+                        type={'success'}
+                    >
+                        Перейти к списку тестов
+                    </Button>
+                </Link>
             </div>
         </div>
     )
