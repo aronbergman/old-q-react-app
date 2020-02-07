@@ -1,17 +1,29 @@
 import React, {Component} from 'react';
 import classes from './Drawer.module.scss'
 import {Shadow} from '../Shadow/Shadow';
+import {NavLink} from 'react-router-dom';
 
 const links = [
-    1, 2, 3
+    {to: '/', label: 'Quiz List', exact: true},
+    {to: '/auth', label: 'Authorization', exact: false},
+    {to: '/quiz-creator', label: 'Create test', exact: false}
 ];
 
 export class Drawer extends Component {
+    clickHandler = () => {
+        this.props.onToggle();
+    };
+
     renderLinks() {
         return links.map((link, index) => {
             return (
                 <li key={index}>
-                    Link {link}
+                    <NavLink
+                        to={link.to}
+                        exact={link.exact}
+                        activeClassName={classes.active}
+                        onClick={this.clickHandler}
+                    >{link.label}</NavLink>
                 </li>
             )
         })

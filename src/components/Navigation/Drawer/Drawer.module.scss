@@ -41,4 +41,8 @@
       opacity: .7;
     }
   }
+
+  ul li a:hover, .active {
+    text-decoration: underline;
+  }
 }
